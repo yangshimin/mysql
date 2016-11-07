@@ -1,0 +1,15 @@
+mysql命令create：创建数据库
+
+create命令用于创建数据库
+
+create命令格式：create database <数据库名>;
+
+注意：创建数据库之前要先连接mysql服务器
+
+
+1)建立一个名为xhkdb的数据库;
+mysql> create database xhkdb;
+
+2) 创建数据库并分配用户：
+1. create database 数据库名;
+2. grant select, insert, update, delete, create, drop, alter on 数据库名.* to 数据库名@localhost indentified by '密码';
