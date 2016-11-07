@@ -1,0 +1,21 @@
+mysql命令use:使用数据库
+
+use命令格式：use <数据库名>;
+
+例如，如果xhkdb数据库存在，尝试存取它：
+mysql> use xhkdb;
+屏幕提示：database changed
+
+1)use 语句可以通过通告mysql把db_name数据库作为默认(当前)数据库使用，用于后续语句。该数据库保持为默认数据
+库，知道语段的结尾，或者知道出现下一个不同的use语句：
+mysql> use db1;
+mysql> select count(*) from mytable; //统计数据库db1中mytable表中的所有记录总数
+mysql> use db2;
+mysql> select count(*) from mytable; //统计数据库db2中mytable表中的所有记录总数
+
+
+2)使用use语句为一个特定的当前的数据库做标记，不会阻碍您访问其它数据库中的表。下面的例子可以从db1数据库访问
+author表，并从db2数据库访问editor表：
+mysql> use db1;
+mysql> select author_name,editor_name from author, db2.editor
+     > where author.editor_id = db2.editor.editor_id
