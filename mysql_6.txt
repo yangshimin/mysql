@@ -1,0 +1,25 @@
+mysql命令drop database:输出数据库
+
+drop命令格式: drop database <数据库名>;
+
+例如，删除名为xhkdb的数据库：
+mysql> drop database xhkdb;
+
+例子1 删除一个已经确定存在的数据库：
+mysql> drop databse drop_database;
+Query OK, 0 rows affected (0.00sec)
+
+
+例子2 删除一个不确定存在的数据库：
+mysql> drop database drop_database;
+ERROR 1008 (HY000):Can't drop database 'drop_database';database doesn't exit
+//发生错误，不能删除 ‘drop_database’ 数据库，该数据库不存在
+
+mysql> drop database if exits drop_database;
+Query OK， 0 rows affected , 1 warning (0.00sec)
+//产生一个警告说明此数据库不存在
+
+mysql> create database drop_database; //创建一个数据库
+Query OK，1 row affected(0.00sec)
+mysql> drop database if exits drop_database; //if exits 判断数据库是否存在，不存在也不产生错误
+Query OK, 0 rows affected(0.00sec)
