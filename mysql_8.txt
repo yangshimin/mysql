@@ -1,0 +1,111 @@
+select命令表示当前选择(连接)的数据库
+
+select命令格式：mysql> select database();
+
+mysql中SELECT命令类似于其他编程语言中的print或者write，你可以用它来显示一个字符串、数字、数学表达式的结果等
+到。如何使用mysql中SELECT命令的特殊功能呢？
+
+
+1) 显示mysql的版本
+>mysql select version();
+
++------------------------+
+|      version()         |
++------------------------+
+|		5.5.52			 |
++------------------------+
+1 row in set (0.00sec)
+
+2)显示当前时间
+mysql> select now();
++------------------------+
+|      now()             |
++------------------------+
+|	2016-11-7 20:54:25   |
++------------------------+
+1 row in set (0.00sec)
+
+3)显示年月日
+mysql> select dayofmonth(current_date);
++------------------------+
+|dauofmonth(current_date)|
++------------------------+
+|      7			     |
++------------------------+
+1 row in set (0.07sec)
+
+mysql>select month(current_date);
++------------------------+
+|    month(current_date) |
++------------------------+
+|		    11			 |
++------------------------+
+1 row in set (0.01sec)
+
+mysql>select year(current_date);
++------------------------+
+|   year(current_date)   |
++------------------------+
+|		2016			 |
++------------------------+
+1 row in set (0.04sec)
+
+4)显示字符串
+mysql> select 'welecome to my blog!';
++------------------------+
+|  welecome to my blog!  |
++------------------------+
+|welecome to my blog!	 |
++------------------------+
+1 row in set(0.00sec)
+
+5)当计算器用
+mysql> select((4*4)/10) + 25;
++------------------------+
+|  select((4*4)/10) + 25 |
++------------------------+
+|		26.6000			 |
++------------------------+
+1 row in set (0.00sec)
+
+6.串接字符串
+mysql> select concat(f_name, '', i_name)
+AS Name from employee_data where title = 'marketing execytive';
++------------------------+
+|        Name            |
++------------------------+
+|   Monica Sehgal		 |
+|   Joseph Irvine        |
+|   Hal Simlai           |
++------------------------+
+3 row in set (0.00sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
