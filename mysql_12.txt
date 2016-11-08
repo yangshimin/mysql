@@ -1,0 +1,15 @@
+mysql命令drop table:删除数据表
+
+drop table命令格式：drop table <表名>;
+
+例如：删除表名为myclass的表：
+mysql>drop table myclass;
+
+drop table用于删除一个或多个表。你必须有每个表的drop权限。所有表数据和表定义会被取消，所以使用本语句要小心
+
+注意：对于一个带分区的表，drop table会永久性地取消表定义，取消各分区，并取消存储在这些分区中的所有数据。drop
+table 还会取消与被取消表有关联的分区定义(.par)文件。
+
+对于不存在的表，使用if exists 用于防止错误发生。当使用if exists时，对于每个不存在的表，会生成一个note(警告)
+
+RESTRICT 和 CASCADE可以使分区更容易。目前，RESTRICT和CASCADE不起作用。
