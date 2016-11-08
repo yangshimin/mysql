@@ -1,0 +1,17 @@
+msyql命令rename:修改表名
+
+rename命令用于修改表名
+
+rename命令格式：rename table 原表名 to 新表名;
+或者
+alter table 原表名 rename to 新表名;
+
+例如，在表myclass名字更改为YouClass:
+mysql> rename table myclass to YouClass；
+
+mysql> alter table YouClass RENAME TO myclass;
+
+当你执行RENAME时，你不能有任何锁定表的活动或活动的事务。你同样也必须有对原初表的ALTER 和 DROP 权限，以及对新表的CREATE
+和 INSERT 权限。
+
+如果在多表更名中，mysql 遭遇到任何错误，它将对所有被更名的表进行倒退更名，将每件事物退回到最初状态。
