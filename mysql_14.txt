@@ -1,0 +1,8 @@
+mysql命令delete from:删除记录
+
+delete from 命令用于删除表中的数据。
+
+delete from命令格式：delete from 表名 where 表达式
+
+例如，删除表myclass中编号为1的记录：
+mysql> delete from myclass where id =1;
