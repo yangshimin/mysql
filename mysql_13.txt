@@ -1,0 +1,15 @@
+mysql命令select from:查询表中的数据(记录)
+
+select from命令用来查询表中的数据
+
+1)查询所有行
+命令格式：select <字段1, 字段2，...> from <表名> where <表达式>;
+
+例如，要查看表myclass中所有数据：
+mysql> select * from myclass
+
+2)查询前几行数据
+例如，查看表myclass中前2行数据：
+mysql> select * from myclass order by in limit0,2;
+
+select一般配合where使用，以查询更精确更复杂的数据。
